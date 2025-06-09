@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BG Magic | Professional Background Removal Tool</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="animate__animated animate__fadeIn">
+            <div class="logo">
+                <i class="fas fa-cut"></i>
+                <h1>BG Genius</h1>
+            </div>
+            <nav>
+                <a href="#" class="active">Home</a>
+                <a href="#">Pricing</a>
+                <a href="#">Blog</a>
+                <a href="#">API</a>
+            </nav>
+            <div class="auth-buttons">
+                <button class="btn login"></button>
+                <button class="btn primary"></button>
+            </div>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </header>
+
+        <main>
+            <section class="hero">
+                <div class="hero-content animate__animated animate__fadeInUp">
+                    <h2>Remove Image Backgrounds</h2>
+                    <p class="subtitle">100% automatically – in just 5 seconds – with zero clicks</p>
+                    
+                    <div class="upload-container" id="uploadContainer">
+                        <div class="upload-box" id="dropArea">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <p>Drag & drop image here or <span class="browse">browse</span></p>
+                            <input type="file" id="fileInput" accept="image/*">
+                            <p class="formats">Supports: JPG, PNG, WEBP (Max 10MB)</p>
+                        </div>
+                        <div class="upload-progress" id="uploadProgress" style="display: none;">
+                            <div class="progress-bar">
+                                <div class="progress" id="progressBar"></div>
+                            </div>
+                            <p class="status" id="statusText">Processing your image...</p>
+                        </div>
+                    </div>
+                    
+                    <div class="result-container" id="resultContainer" style="display: none;">
+                        <div class="result-preview">
+                            <div class="image-container original">
+                                <img id="originalImage" src="" alt="Original image">
+                                <div class="image-label">Original</div>
+                            </div>
+                            <div class="image-container result">
+                                <img id="resultImage" src="" alt="Result image">
+                                <div class="image-label">Result</div>
+                            </div>
+                        </div>
+                        <div class="result-actions">
+                            <button class="btn secondary" id="downloadBtn">
+                                <i class="fas fa-download"></i> Download
+                            </button>
+                            <button class="btn primary" id="newImageBtn">
+                                <i class="fas fa-redo"></i> New Image
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="pricing-section">
+                <h3 class="section-title animate__animated animate__fadeIn">Simple, Transparent Pricing</h3>
+                <p class="section-subtitle animate__animated animate__fadeIn animate__delay-1s">Choose the plan that works for you</p>
+                
+                <div class="pricing-grid">
+                    <div class="pricing-card animate__animated animate__fadeInLeft animate__delay-1s">
+                        <div class="pricing-header">
+                            <h4>Free</h4>
+                            <div class="price">$0<span>/month</span></div>
+                        </div>
+                        <ul class="features-list">
+                            <li><i class="fas fa-check"></i> 5 free images per month</li>
+                            <li><i class="fas fa-check"></i> Medium quality (0.25MP)</li>
+                            <li><i class="fas fa-check"></i> Basic background removal</li>
+                            <li><i class="fas fa-times"></i> No HD quality</li>
+                            <li><i class="fas fa-times"></i> No API access</li>
+                        </ul>
+                        <button class="btn secondary">Current Plan</button>
+                    </div>
+                    
+                    <div class="pricing-card featured animate__animated animate__fadeInUp animate__delay-1s">
+                        <div class="popular-badge">Most Popular</div>
+                        <div class="pricing-header">
+                            <h4>Pro</h4>
+                            <div class="price">$10<span>/month</span></div>
+                        </div>
+                        <ul class="features-list">
+                            <li><i class="fas fa-check"></i> 100 images per month</li>
+                            <li><i class="fas fa-check"></i> High quality (5MP)</li>
+                            <li><i class="fas fa-check"></i> Advanced edge refinement</li>
+                            <li><i class="fas fa-check"></i> Bulk processing</li>
+                            <li><i class="fas fa-times"></i> Limited API access</li>
+                        </ul>
+                        <button class="btn primary">Upgrade Now</button>
+                    </div>
+                    
+                    <div class="pricing-card animate__animated animate__fadeInRight animate__delay-1s">
+                        <div class="pricing-header">
+                            <h4>Business</h4>
+                            <div class="price">$30<span>/month</span></div>
+                        </div>
+                        <ul class="features-list">
+                            <li><i class="fas fa-check"></i> 500 images per month</li>
+                            <li><i class="fas fa-check"></i> Ultra HD quality (25MP)</li>
+                            <li><i class="fas fa-check"></i> Priority processing</li>
+                            <li><i class="fas fa-check"></i> Full API access</li>
+                            <li><i class="fas fa-check"></i> Dedicated support</li>
+                        </ul>
+                        <button class="btn secondary">Get Business</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="features">
+                <h3 class="section-title animate__animated animate__fadeIn">Why Choose BG Magic?</h3>
+                <p class="section-subtitle animate__animated animate__fadeIn animate__delay-1s">The most advanced background removal technology</p>
+                
+                <div class="feature-grid">
+                    <div class="feature-card animate__animated animate__fadeIn animate__delay-1s">
+                        <div class="feature-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h4>Lightning Fast</h4>
+                        <p>Process images in just seconds with our powerful AI technology.</p>
+                    </div>
+                    <div class="feature-card animate__animated animate__fadeIn animate__delay-1-5s">
+                        <div class="feature-icon">
+                            <i class="fas fa-cut"></i>
+                        </div>
+                        <h4>Precision Cutouts</h4>
+                        <p>Get perfect cutouts with fine details like hair and fur preserved.</p>
+                    </div>
+                    <div class="feature-card animate__animated animate__fadeIn animate__delay-2s">
+                        <div class="feature-icon">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <h4>Secure Processing</h4>
+                        <p>Your images are processed securely and deleted automatically.</p>
+                    </div>
+                    <div class="feature-card animate__animated animate__fadeIn animate__delay-2-5s">
+                        <div class="feature-icon">
+                            <i class="fas fa-infinity"></i>
+                        </div>
+                        <h4>Any Device</h4>
+                        <p>Works perfectly on desktop, tablet, and mobile devices.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <i class="fas fa-cut"></i>
+                        <span>BG Magic</span>
+                    </div>
+                    <p class="footer-description">The most advanced background removal tool powered by AI technology.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h5>Product</h5>
+                        <a href="#">Features</a>
+                        <a href="#">Pricing</a>
+                        <a href="#">API</a>
+                        <a href="#">Integrations</a>
+                    </div>
+                    <div class="link-group">
+                        <h5>Resources</h5>
+                        <a href="#">Help Center</a>
+                        <a href="#">Tutorials</a>
+                        <a href="#">Blog</a>
+                        <a href="#">Community</a>
+                    </div>
+                    <div class="link-group">
+                        <h5>Company</h5>
+                        <a href="#">About</a>
+                        <a href="#">Careers</a>
+                        <a href="#">Contact</a>
+                        <a href="#">Press</a>
+                    </div>
+                    <div class="link-group">
+                        <h5>Legal</h5>
+                        <a href="#">Privacy</a>
+                        <a href="#">Terms</a>
+                        <a href="#">Cookie Policy</a>
+                        <a href="#">GDPR</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-pricing">
+                <h5>Pricing Plans</h5>
+                <div class="pricing-mini-cards">
+                    <div class="pricing-mini-card">
+                        <div>Free</div>
+                        <div>$0/month</div>
+                    </div>
+                    <div class="pricing-mini-card">
+                        <div>Pro</div>
+                        <div>$10/month</div>
+                    </div>
+                    <div class="pricing-mini-card">
+                        <div>Business</div>
+                        <div>$30/month</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="copyright">© 2023 BG Magic. All rights reserved.</div>
+                <div class="language-selector">
+                    <i class="fas fa-globe"></i>
+                    <select>
+                        <option>English</option>
+                        <option>Español</option>
+                        <option>Français</option>
+                        <option>Deutsch</option>
+                    </select>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
